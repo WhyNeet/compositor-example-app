@@ -1,0 +1,24 @@
+{
+  "name": "compositor-test-app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "node esbuild.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@compositor/core": "link:/home/whyneet/Misc/compositor/packages/core",
+    "@compositor/http": "link:/home/whyneet/Misc/compositor/packages/http",
+    "@compositor/server-express": "link:/home/whyneet/Misc/compositor/packages/server-express"
+  },
+  "devDependencies": {
+    "@anatine/esbuild-decorators": "^0.2.19",
+    "@types/express": "^4.17.21",
+    "esbuild": "^0.23.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.4"
+  }
+}
