@@ -1,14 +1,19 @@
-import { Advice, Bean, ExceptionHandler } from "@compositor/core";
+import { ControllerAdvice, Bean, ExceptionHandler } from "@compositor/core";
+import type { HttpRequest, HttpResponse } from "@compositor/http";
 
-// AOP is not implemented yet
-@Advice(Bean.decorator)
+@ControllerAdvice()
 export class ExceptionHandlingAdvice {
   constructor() {
     console.log("init exception handling advice");
   }
 
   @ExceptionHandler(Error)
-  public handleException(ex: Error) {
-    console.log("An error occured!", ex.name, ex.message);
+  public handleException(
+    ex: Error,
+    request: HttpRequest,
+    response: HttpResponse,
+  ) {
+    console.log("an error occured on:", request.path);
+    console.error("error:", ex.name, ex.message);
   }
 }
