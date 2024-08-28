@@ -13,7 +13,9 @@ export class ExceptionHandlingAdvice {
     request: HttpRequest,
     response: HttpResponse,
   ) {
-    console.log("an error occured on:", request.path);
-    console.error("error:", ex.name, ex.message);
+    return {
+      data: "uh oh, this is an error ig",
+      instance: request.path,
+    };
   }
 }
